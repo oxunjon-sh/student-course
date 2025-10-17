@@ -1,10 +1,8 @@
 package org.example.homework12.repository;
-
-import org.example.homework12.entity.StudentCourseMark;
-import org.example.homework12.entity.StudentEntity;
+import org.example.homework12.entity.StudentCourseMarkEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface StudentCourseMarkRepository extends JpaRepository<StudentCourseMark, Integer> {
+public interface StudentCourseMarkRepository extends JpaRepository<StudentCourseMarkEntity, Integer> {
 }

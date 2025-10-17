@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
+
 @Entity
 @Table(name = "course")
 @Getter
@@ -22,4 +24,7 @@ public class CourseEntity {
     private String duration;
 
     private LocalDateTime createdDate;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<StudentCourseMark> marks;
 }

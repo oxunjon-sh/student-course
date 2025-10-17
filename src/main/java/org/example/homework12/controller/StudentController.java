@@ -23,8 +23,9 @@ public class StudentController {
         return ResponseEntity.ok().body(studentService.getAllStudents());
     }
 
-    @PostMapping
-    public ResponseEntity<StudentEntity> addStudent(@RequestBody StudentDTO studentDTO) {
+    @PostMapping("/{id}")
+    public ResponseEntity<StudentEntity> addStudent(@PathVariable Integer id,
+                                                    @RequestBody StudentDTO studentDTO) {
         return ResponseEntity.ok(studentService.addStudent(studentDTO));
     }
 
@@ -81,10 +82,9 @@ public class StudentController {
 
     @GetMapping("/date-between1")
     public ResponseEntity<List<StudentDTO>> getStudentByDateBetween2(@RequestParam(value = "dateFrom") LocalDate dateFrom,
-                                                                     @RequestParam(value = "dateTo") LocalDate localTo) {
-        return ResponseEntity.ok(studentService.findStudentDateBetween2(dateFrom, localTo));
+                                                                     @RequestParam(value = "dateTo") LocalDate dateTo) {
+        return ResponseEntity.ok(studentService.findStudentDateBetween2(dateFrom, dateTo));
     }
-
 
 
 }

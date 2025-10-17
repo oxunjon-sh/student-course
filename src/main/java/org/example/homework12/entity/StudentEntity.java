@@ -1,14 +1,14 @@
 package org.example.homework12.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
-
+import java.util.List;
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Getter
-@Setter
 @Table(name = "student")
 public class StudentEntity {
 
@@ -27,4 +27,7 @@ public class StudentEntity {
     private String gender;
 
     private LocalDateTime createdDate;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<StudentCourseMark> marks;
 }
