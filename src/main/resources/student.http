@@ -1,0 +1,26 @@
+
+### All Students
+GET localhost:8080/student
+
+### Get Student By Id
+GET localhost:8080/student/11
+
+
+
+### Add Student
+POST localhost:8080/student
+Content-Type: application/json
+
+{
+  "name": "Alijon1",
+  "surname": "Alijonov",
+  "level": "Middle",
+  "gender": "M",
+  "age": 23
+}
+
+### Pagination
+GET localhost:8080/student/pagination?page=2&size=8
+
+
+###
